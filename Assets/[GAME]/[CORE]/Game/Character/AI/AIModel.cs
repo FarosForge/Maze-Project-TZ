@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 
@@ -10,6 +9,7 @@ namespace AI
         int path_ID = 0;
 
         private RayScan rayScan;
+        public RayScan GetScan => rayScan;
 
         public AIModel(Transform transform, Transform target)
         {
@@ -17,6 +17,7 @@ namespace AI
         }
 
         public bool followTarget { get; set; }
+        public Action<float> checkDistance { get; set; }
 
         public bool CheckDistanceToTarget(Components components)
         {
@@ -47,6 +48,13 @@ namespace AI
                     }
                 }
             }
+
+            if(!rayScan.CheckViewSpace())
+            {
+                rayScan.ResetDistance();
+            }
+            
+            checkDistance?.Invoke(rayScan.GetDistanceToTarget);
 
             return rayScan.target.position;
         }

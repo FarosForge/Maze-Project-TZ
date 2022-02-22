@@ -6,49 +6,27 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameContainer gameContainer;
-    [SerializeField] private GameUIManager uiManager;
-
-    private List<ICharacter> ai_enemy = new List<ICharacter>();
-    private List<ICharacter> ai_friends = new List<ICharacter>();
-    private List<ICharacter> ai_friends_player = new List<ICharacter>();
+    [SerializeField] private GameUIContainer uIContainer;
 
     private PlayerController playerController;
+    private GameAIController aIController;
+    private GameUIManager uiManager;
 
     private void Start()
     {
+        uiManager = new GameUIManager(uIContainer);
+        uiManager.Init();
+        aIController = new GameAIController(gameContainer, this, uiManager.SetFriendsMapCounter, 
+            uiManager.SetFriendsPlayerCounter, uiManager);
+        aIController.Init();
         playerController = new PlayerController(gameContainer.GetPlayerView);
-
-        for (int i = 0; i < gameContainer.AIViewsEnemy.Length; i++)
-        {
-            var mob = new AIController(gameContainer.AIViewsEnemy[i], gameContainer.GetPlayerView);
-            mob.Init(this);
-            ai_enemy.Add(mob);
-        }
-
-        for (int i = 0; i < gameContainer.AIViewsFriends.Length; i++)
-        {
-            var mob = new AIController(gameContainer.AIViewsFriends[i], gameContainer.GetPlayerView);
-            mob.Init(this);
-            ai_friends.Add(mob);
-        }
-
-        uiManager.SetFriendsMapCounter(ai_friends.Count);
-        uiManager.SetFriendsPlayerCounter(ai_friends_player.Count);
     }
 
     private void Update()
     {
         playerController.Tick();
-
-        foreach (var mob in ai_enemy)
-        {
-            mob.Tick();
-        }
-
-        foreach (var mob in ai_friends)
-        {
-            mob.Tick();
-        }
+        uiManager.Tick();
+        aIController.Tick();
     }
 
     public void Lose()
@@ -63,9 +41,5 @@ public class GameManager : MonoBehaviour
         Debug.Log("Win!");
     }
 
-    public void AddFriendsToPlayer(ICharacter character)
-    {
-        ai_friends_player.Add(character);
-        uiManager.SetFriendsPlayerCounter(ai_friends_player.Count);
-    }
+
 }

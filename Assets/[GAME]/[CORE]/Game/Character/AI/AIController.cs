@@ -1,18 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using AI;
 
-public class AIController : ICharacter
+public class AIController : IBot
 {
+    public Action<IBot> addToPlayerAction { get; set; }
+
     private IModel model;
     private IView view;
     private GameManager gameManager;
 
-    public AIController(IView view, PLAYER.PlayerView player)
+    public AIController(IView view, PLAYER.PlayerView player, Action<float> action)
     {
         this.view = view;
         model = new AIModel(view.components.my_transform, player.transform);
+
+        if(view.components.type == AIType.Enemy)
+            model.checkDistance += action;
     }
 
     public void Init(GameManager _gameManager)
@@ -43,7 +47,7 @@ public class AIController : ICharacter
 
     public void AddToPlayer()
     {
-        gameManager.AddFriendsToPlayer(this);
+        addToPlayerAction?.Invoke(this);
         model.followTarget = true;
         Debug.Log("Friend!");
 

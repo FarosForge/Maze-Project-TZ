@@ -4,7 +4,6 @@ using PLAYER;
 
 public class RayScan
 {
-
 	private int distance = 10;
 
 	private Vector3 pos, forward;
@@ -19,6 +18,8 @@ public class RayScan
     public Transform transform { get; private set; }
 	public Transform target { get; private set; }
 
+	public float GetDistanceToTarget { get; private set; }
+
 	public bool CheckViewSpace()
     {
 		pos = target.position - transform.position;
@@ -31,6 +32,7 @@ public class RayScan
             {
 				if (hit.collider.GetComponent<PlayerView>())
 				{
+					GetDistanceToTarget = Vector3.Distance(transform.position, target.position);
 					return true;
 				}
 			}
@@ -38,4 +40,9 @@ public class RayScan
 
 		return false;
     }
+
+	public void ResetDistance()
+    {
+		GetDistanceToTarget = distance;
+	}
 }
