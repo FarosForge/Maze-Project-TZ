@@ -9,13 +9,20 @@ namespace AI
     {
         int path_ID = 0;
 
+        private RayScan rayScan;
+
+        public AIModel(Transform transform, Transform target)
+        {
+            rayScan = new RayScan(transform, target);
+        }
+
         public bool followTarget { get; set; }
 
         public bool CheckDistanceToTarget(Components components)
         {
-            if(components.rayScan.RayToScan())
+            if(rayScan.CheckViewSpace())
             {
-                if(Vector3.Distance(components.my_transform.position, components.rayScan.target.position) <= components.agent.stoppingDistance)
+                if(Vector3.Distance(components.my_transform.position, rayScan.target.position) <= components.agent.stoppingDistance)
                 {
                     return true;
                 }
@@ -28,7 +35,7 @@ namespace AI
         {
             if (!followTarget)
             {
-                if (!components.rayScan.RayToScan())
+                if (!rayScan.CheckViewSpace())
                 {
                     if (Vector3.Distance(components.my_transform.position, components.path_points[path_ID].position) <= components.agent.stoppingDistance)
                     {
@@ -41,7 +48,7 @@ namespace AI
                 }
             }
 
-            return components.rayScan.target.position;
+            return rayScan.target.position;
         }
 
         void SetNewPoint(int length)

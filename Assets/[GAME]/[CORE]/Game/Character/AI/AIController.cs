@@ -9,10 +9,10 @@ public class AIController : ICharacter
     private IView view;
     private GameManager gameManager;
 
-    public AIController(IView view)
+    public AIController(IView view, PLAYER.PlayerView player)
     {
         this.view = view;
-        model = new AIModel();
+        model = new AIModel(view.components.my_transform, player.transform);
     }
 
     public void Init(GameManager _gameManager)

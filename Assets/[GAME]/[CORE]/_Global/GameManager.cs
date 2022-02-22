@@ -20,14 +20,14 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < gameContainer.AIViewsEnemy.Length; i++)
         {
-            var mob = new AIController(gameContainer.AIViewsEnemy[i]);
+            var mob = new AIController(gameContainer.AIViewsEnemy[i], gameContainer.GetPlayerView);
             mob.Init(this);
             ai_enemy.Add(mob);
         }
 
         for (int i = 0; i < gameContainer.AIViewsFriends.Length; i++)
         {
-            var mob = new AIController(gameContainer.AIViewsFriends[i]);
+            var mob = new AIController(gameContainer.AIViewsFriends[i], gameContainer.GetPlayerView);
             mob.Init(this);
             ai_friends.Add(mob);
         }

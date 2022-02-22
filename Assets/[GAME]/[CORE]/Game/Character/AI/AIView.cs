@@ -26,7 +26,6 @@ namespace AI
         public AIType type;
         public NavMeshAgent agent;
         public Transform[] path_points;
-        public RayScan rayScan;
         public Transform my_transform;
     }
 

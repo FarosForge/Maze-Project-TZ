@@ -994,7 +994,6 @@ GameObject:
   - component: {fileID: 223979813}
   - component: {fileID: 223979816}
   - component: {fileID: 223979815}
-  - component: {fileID: 223979814}
   m_Layer: 0
   m_Name: AI (6)
   m_TagString: Untagged
@@ -1017,22 +1016,6 @@ Transform:
   m_Father: {fileID: 73055342}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &223979814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 223979812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eaadad21740a5f4e942c4ad064e20b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rays: 6
-  distance: 15
-  angle: 20
-  offset: {x: 0, y: 0.3, z: 0}
 --- !u!195 &223979815
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1073,7 +1056,6 @@ MonoBehaviour:
     path_points:
     - {fileID: 1749720812}
     - {fileID: 1224941963}
-    rayScan: {fileID: 223979814}
     my_transform: {fileID: 223979813}
 --- !u!1 &226776229
 GameObject:
@@ -1988,7 +1970,6 @@ GameObject:
   - component: {fileID: 407998618}
   - component: {fileID: 407998617}
   - component: {fileID: 407998616}
-  - component: {fileID: 407998615}
   m_Layer: 0
   m_Name: AI (1)
   m_TagString: Untagged
@@ -1996,22 +1977,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &407998615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 407998614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eaadad21740a5f4e942c4ad064e20b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rays: 6
-  distance: 15
-  angle: 20
-  offset: {x: 0, y: 0.3, z: 0}
 --- !u!195 &407998616
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2052,7 +2017,6 @@ MonoBehaviour:
     path_points:
     - {fileID: 271823990}
     - {fileID: 1674794702}
-    rayScan: {fileID: 407998615}
     my_transform: {fileID: 407998618}
 --- !u!4 &407998618
 Transform:
@@ -3291,7 +3255,6 @@ GameObject:
   - component: {fileID: 768725413}
   - component: {fileID: 768725412}
   - component: {fileID: 768725411}
-  - component: {fileID: 768725414}
   m_Layer: 0
   m_Name: AI
   m_TagString: Untagged
@@ -3339,7 +3302,6 @@ MonoBehaviour:
     path_points:
     - {fileID: 57800960}
     - {fileID: 1435493226}
-    rayScan: {fileID: 768725414}
     my_transform: {fileID: 768725413}
 --- !u!4 &768725413
 Transform:
@@ -3356,22 +3318,6 @@ Transform:
   m_Father: {fileID: 351687717}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &768725414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 768725410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eaadad21740a5f4e942c4ad064e20b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rays: 6
-  distance: 15
-  angle: 20
-  offset: {x: 0, y: 0.3, z: 0}
 --- !u!1 &771049703
 GameObject:
   m_ObjectHideFlags: 0
@@ -4062,7 +4008,6 @@ GameObject:
   - component: {fileID: 1024342179}
   - component: {fileID: 1024342182}
   - component: {fileID: 1024342181}
-  - component: {fileID: 1024342180}
   m_Layer: 0
   m_Name: AI (7)
   m_TagString: Untagged
@@ -4085,22 +4030,6 @@ Transform:
   m_Father: {fileID: 73055342}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1024342180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1024342178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eaadad21740a5f4e942c4ad064e20b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rays: 6
-  distance: 15
-  angle: 20
-  offset: {x: 0, y: 0.3, z: 0}
 --- !u!195 &1024342181
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4141,7 +4070,6 @@ MonoBehaviour:
     path_points:
     - {fileID: 324766659}
     - {fileID: 2054593827}
-    rayScan: {fileID: 1024342180}
     my_transform: {fileID: 1024342179}
 --- !u!1 &1036584746
 GameObject:
@@ -4741,7 +4669,6 @@ GameObject:
   - component: {fileID: 1215763973}
   - component: {fileID: 1215763972}
   - component: {fileID: 1215763971}
-  - component: {fileID: 1215763970}
   m_Layer: 0
   m_Name: AI (2)
   m_TagString: Untagged
@@ -4749,22 +4676,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1215763970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1215763969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eaadad21740a5f4e942c4ad064e20b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rays: 6
-  distance: 15
-  angle: 20
-  offset: {x: 0, y: 0.3, z: 0}
 --- !u!195 &1215763971
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4805,7 +4716,6 @@ MonoBehaviour:
     path_points:
     - {fileID: 189365343}
     - {fileID: 529809291}
-    rayScan: {fileID: 1215763970}
     my_transform: {fileID: 1215763973}
 --- !u!4 &1215763973
 Transform:
@@ -5055,7 +4965,6 @@ GameObject:
   - component: {fileID: 1250320512}
   - component: {fileID: 1250320515}
   - component: {fileID: 1250320514}
-  - component: {fileID: 1250320513}
   m_Layer: 0
   m_Name: AI (5)
   m_TagString: Untagged
@@ -5078,22 +4987,6 @@ Transform:
   m_Father: {fileID: 73055342}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1250320513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1250320511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eaadad21740a5f4e942c4ad064e20b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rays: 6
-  distance: 15
-  angle: 20
-  offset: {x: 0, y: 0.3, z: 0}
 --- !u!195 &1250320514
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5134,7 +5027,6 @@ MonoBehaviour:
     path_points:
     - {fileID: 1553997076}
     - {fileID: 107041583}
-    rayScan: {fileID: 1250320513}
     my_transform: {fileID: 1250320512}
 --- !u!1 &1270895653
 GameObject:
@@ -5147,7 +5039,6 @@ GameObject:
   - component: {fileID: 1270895654}
   - component: {fileID: 1270895657}
   - component: {fileID: 1270895656}
-  - component: {fileID: 1270895655}
   m_Layer: 0
   m_Name: AI (4)
   m_TagString: Untagged
@@ -5170,22 +5061,6 @@ Transform:
   m_Father: {fileID: 73055342}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1270895655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1270895653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eaadad21740a5f4e942c4ad064e20b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rays: 6
-  distance: 15
-  angle: 20
-  offset: {x: 0, y: 0.3, z: 0}
 --- !u!195 &1270895656
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5226,7 +5101,6 @@ MonoBehaviour:
     path_points:
     - {fileID: 397672209}
     - {fileID: 1036584747}
-    rayScan: {fileID: 1270895655}
     my_transform: {fileID: 1270895654}
 --- !u!1 &1285459548
 GameObject:
@@ -7087,7 +6961,6 @@ GameObject:
   - component: {fileID: 1787422897}
   - component: {fileID: 1787422896}
   - component: {fileID: 1787422895}
-  - component: {fileID: 1787422894}
   m_Layer: 0
   m_Name: AI (3)
   m_TagString: Untagged
@@ -7095,22 +6968,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1787422894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1787422893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eaadad21740a5f4e942c4ad064e20b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rays: 6
-  distance: 15
-  angle: 20
-  offset: {x: 0, y: 0.3, z: 0}
 --- !u!195 &1787422895
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -7151,7 +7008,6 @@ MonoBehaviour:
     path_points:
     - {fileID: 771049704}
     - {fileID: 1609895694}
-    rayScan: {fileID: 1787422894}
     my_transform: {fileID: 1787422897}
 --- !u!4 &1787422897
 Transform:
@@ -8470,6 +8326,7 @@ GameObject:
   - component: {fileID: 2108928719}
   - component: {fileID: 2108928720}
   - component: {fileID: 2108928721}
+  - component: {fileID: 2108928722}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -8544,6 +8401,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &2108928722
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108928717}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2128525026
 GameObject:
   m_ObjectHideFlags: 0

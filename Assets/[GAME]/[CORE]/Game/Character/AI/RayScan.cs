@@ -2,75 +2,40 @@ using UnityEngine;
 using System.Collections;
 using PLAYER;
 
-public class RayScan : MonoBehaviour
+public class RayScan
 {
-	[SerializeField] private int rays = 6;
-	[SerializeField] private int distance = 15;
-	[SerializeField] private float angle = 20;
-	[SerializeField] private Vector3 offset;
+
+	private int distance = 10;
+
+	private Vector3 pos, forward;
+	private Ray ray;
+
+    public RayScan(Transform transform, Transform target)
+    {
+        this.transform = transform;
+        this.target = target;
+    }
+
+    public Transform transform { get; private set; }
 	public Transform target { get; private set; }
 
-	void Start()
-	{
-		target = FindObjectOfType<PlayerView>().transform;
-		Debug.Log(target);
-	}
-
-	bool GetRaycast(Vector3 dir)
-	{
-		bool result = false;
-		RaycastHit hit = new RaycastHit();
-		Vector3 pos = transform.position + offset;
-		if (Physics.Raycast(pos, dir, out hit, distance))
-		{
-			if (hit.transform == target)
-			{
-				result = true;
-#if UNITY_EDITOR
-				Debug.DrawLine(pos, hit.point, Color.green);
-#endif
-			}
-			else
-			{
-#if UNITY_EDITOR
-
-				Debug.DrawLine(pos, hit.point, Color.blue);
-#endif
-			}
-		}
-		else
-		{
-#if UNITY_EDITOR
-			Debug.DrawRay(pos, dir * distance, Color.red);
-#endif
-		}
-		return result;
-	}
-
-	public bool RayToScan()
-	{
-		bool result = false;
-		bool a = false;
-		bool b = false;
-		float j = 0;
-		for (int i = 0; i < rays; i++)
-		{
-			var x = Mathf.Sin(j);
-			var y = Mathf.Cos(j);
-
-			j += angle * Mathf.Deg2Rad / rays;
-
-			Vector3 dir = transform.TransformDirection(new Vector3(x, 0, y));
-			if (GetRaycast(dir)) a = true;
-
-			if (x != 0)
-			{
-				dir = transform.TransformDirection(new Vector3(-x, 0, y));
-				if (GetRaycast(dir)) b = true;
+	public bool CheckViewSpace()
+    {
+		pos = target.position - transform.position;
+		forward = transform.TransformDirection(Vector3.forward);
+		ray = new Ray(transform.position, pos.normalized);
+		
+		if (Vector3.Dot(forward, pos) > 0)
+        {
+			if (Physics.Raycast(ray, out RaycastHit hit, distance))
+            {
+				if (hit.collider.GetComponent<PlayerView>())
+				{
+					return true;
+				}
 			}
 		}
 
-		if (a || b) result = true;
-		return result;
-	}
+		return false;
+    }
 }
